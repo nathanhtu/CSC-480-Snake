@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 import curses
 from random import randint
 
@@ -43,13 +43,14 @@ class SnakeGame:
     def render(self):
         self.win.clear()
         self.win.border(0)
-        self.win.addstr(0, 2, 'Score : ' + str(self.score) + ' ')
-        self.win.addch(self.food[0], self.food[1], '🍎')
+        self.win.addstr(0, 11, 'Score: ' + str(self.score) + ' ')
+        self.win.addstr(0, 0, 'CSC 480-01')
+        self.win.addch(self.food[0], self.food[1], 'X')
         for i, point in enumerate(self.snake):
             if i == 0:
-                self.win.addch(point[0], point[1], '🔸')
+                self.win.addch(point[0], point[1], 'O')
             else:
-                self.win.addch(point[0], point[1], '🔹')
+                self.win.addch(point[0], point[1], 'O')
         self.win.getch()
 
     def step(self, key):
